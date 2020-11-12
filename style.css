@@ -6,4 +6,28 @@
 
 body{
     font-family: 'Jost', sans-serif;
+    background: linear-gradient(0deg, rgba(218,219,213,1) 85%, rgba(0,150,136,1) 85%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 1000px;
+    height: 600px;
+    background-color: white;
+    display: flex;
+}
+
+.container .part-left{
+    width: 30%;
+    height: 100%;
+    background-color: red;
+}
+
+.container .part-right{
+    width: 70%;
+    height: 100%;
+    background-color: blue;
 }
