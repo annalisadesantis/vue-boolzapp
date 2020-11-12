@@ -28,7 +28,6 @@ body{
 .container .part-left{
     width: 30%;
     height: 100%;
-    background-color: red;
     display: flex;
     flex-direction: column;
     border-right: 2px solid lightgrey;
@@ -119,6 +118,31 @@ body{
     outline: 0;
 }
 
+.chat-container{
+    height: calc(100% - 175px);
+}
+
+.chat-preview{
+    width: 100%;
+    height: 81px;
+    padding: 0 10px;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.chat-info img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: lightgrey;
+    margin-right: 20px;
+}
+
+.chat-info-text p{
+    color: grey;
+}
 
 
 /* Contenitore destra */

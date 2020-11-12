@@ -23,7 +23,7 @@
                 <div class="part-left">
                     <!-- Header top left -->
                     <div class="top-left">
-                        <img src="annalisa.svg" alt="utente-annalisa">
+                        <img src="https://boolzap.netlify.app/img/Sara.svg" alt="utente-annalisa">
                         <div class="header-icon">
                             <i class="fas fa-circle-notch"></i>
                             <i class="fas fa-comment-alt"></i>
@@ -49,7 +49,17 @@
                     </div>
                     <!-- Bottom top left -->
                     <div class="bottom-left">
-
+                        <div class="chat-container">
+                            <div class="chat-preview" v-for="(chat,index) in contacts">
+                                <div class="chat-info">
+                                    <img :src="chat.avatar" alt="avatar">
+                                </div>
+                                <div class="chat-info-text">
+                                    <h4>{{ chat.name }}</h4>
+                                    <p>Disponibile</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Parte Destra -->
