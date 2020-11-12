@@ -90,14 +90,10 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
-                    <div class="bottom-right">
-                        <span class="sent">
-                            Come stai?
+                    <div class="bottom-right" v-for="info in contacts[contactactive].messages">
+                        <span :class="info.status">
+                            {{ info.message }}
                         </span>
-                        <span class="received">
-                            Bene grazie
-                        </span>
-
                     </div>
                     <div class="footer-right">
                         <i class="far fa-smile"></i>
