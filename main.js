@@ -2,7 +2,7 @@ var app = new Vue({
     el: "#root",
     data: {
         contactactive: 0,
-        newmessage: "",
+        nuovomessaggio: "",
         contacts: [
             {
                 name: 'Michele',
@@ -127,6 +127,32 @@ var app = new Vue({
         // Mi permette di aprire la chat dove clicco
         clickchat(index){
             this.contactactive = index;
+        },
+        addmessage(newmessage){
+
+            var newmessage = {
+                date: '10/01/2020 15:50:00',
+                message: '',
+                status: 'sent'
+            }
+
+            newmessage.message = this.nuovomessaggio;
+
+            // console.log(newmessage);
+
+            this.contacts[this.contactactive].messages.push(newmessage);
+
+            this.nuovomessaggio = "";
+
+            // console.log(this.contacts[this.contactactive]);
+
+            var newmrisp = {
+                date: '10/01/2020 15:50:00',
+                message: 'ok',
+                status: 'received'
+            }
+
+            this.contacts[this.contactactive].messages.push(newmrisp);
         }
 
     }
