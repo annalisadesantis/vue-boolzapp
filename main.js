@@ -130,29 +130,36 @@ var app = new Vue({
         },
         addmessage(newmessage){
 
+            // Creo una un oggetto per inserire il nuovo messaggio
             var newmessage = {
                 date: '10/01/2020 15:50:00',
                 message: '',
                 status: 'sent'
             }
 
+            // inserisco il valore dell'intup netro message della nuova varibile
             newmessage.message = this.nuovomessaggio;
 
             // console.log(newmessage);
 
+            // All'interno dell'array contact, nel conttatto corrente in messaggi faccio push del nuovo oggetto creato prima
             this.contacts[this.contactactive].messages.push(newmessage);
 
+            // Ripulisco la stringa del input
             this.nuovomessaggio = "";
 
             // console.log(this.contacts[this.contactactive]);
 
+            // Creo un oggetto per la risposta
             var newmrisp = {
                 date: '10/01/2020 15:50:00',
                 message: 'ok',
                 status: 'received'
             }
 
+            // Stesso procedimento riga 145
             this.contacts[this.contactactive].messages.push(newmrisp);
+
         }
 
     }
