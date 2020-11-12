@@ -2,6 +2,7 @@ var app = new Vue({
     el: "#root",
     data: {
         contactactive: 0,
+        newmessage: "",
         contacts: [
             {
                 name: 'Michele',
@@ -93,7 +94,7 @@ var app = new Vue({
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
-                        message: 'Vini con me a correre al parco?',
+                        message: 'Vieni con me a correre al parco?',
                         status: 'sent'
                     },
                     {
@@ -127,6 +128,7 @@ var app = new Vue({
         clickchat(index){
             this.contactactive = index;
         }
+
     }
 
 });

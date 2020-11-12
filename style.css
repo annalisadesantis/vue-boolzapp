@@ -103,7 +103,7 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 8px;
     background-color: white
 }
 
@@ -241,7 +241,7 @@ body{
     border: 0;
     width: 85%;
     padding: 15px 10px;
-    border-radius: 20px;
+    border-radius: 8px;
 }
 
 .footer-right input:focus{
