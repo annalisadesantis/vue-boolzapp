@@ -121,5 +121,10 @@ var app = new Vue({
             }
         ]
     },
+    methods: {
+        // clickchat(index){
+        //     this.contacts = index;
+        // }
+    }
 
 });

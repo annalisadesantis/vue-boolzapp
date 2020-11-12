@@ -81,6 +81,7 @@ body{
 
 .center-left-text span{
     font-weight: bold;
+    font-size: 15px;
 }
 
 .center-left-text a{
@@ -167,9 +168,30 @@ body{
 .chat-corrente{
     width: 80%;
     height: 100%;
-    background-color: red;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
+.chat-corrente img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: lightgrey;
+}
+
+.chat-corrente-text{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.chat-corrente-text p{
+    color: grey;
+    font-size: 12px;
+}
 
 .bottom-right{
     height: calc(100% - 120px);
