@@ -13,6 +13,8 @@ body{
     align-items: center;
 }
 
+/* Contenitore Generale */
+
 .container{
     width: 1000px;
     height: 600px;
@@ -20,14 +22,125 @@ body{
     display: flex;
 }
 
+
+/* Contenitore sinistra */
+
 .container .part-left{
     width: 30%;
     height: 100%;
     background-color: red;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid lightgrey;
 }
+
+.part-left .top-left img{
+    height: 80%;
+    width: auto;
+    border-radius: 50%;
+    background-color: lightgrey;
+}
+
+.header-icon i{
+    margin-right: 8px;
+    color: grey;
+    cursor: pointer;
+}
+
+.center-left{
+    height: 70px;
+    width: 100%;
+    background-color: rgb(157, 225, 254);
+    color: rgb(100, 100, 100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-left .circle-icon{
+    background-color: white;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.center-left i{
+    color: rgb(157, 225, 254);
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.center-left-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.center-left-text a{
+    color: rgb(100, 100, 100);
+}
+
+.search-left{
+    height: 45px;
+    background-color: rgb(237, 237, 237);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-left{
+    margin: auto;
+    height: 80%;
+    width: 95%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 20px;
+    background-color: white
+}
+
+.input-left i{
+    color: lightgrey;
+    margin-left: 8px;
+}
+
+.input-left input{
+    border: 0;
+    height: 80%;
+    width: 90%;
+    padding: 8px 20px;
+}
+
+.input-left input:focus{
+    outline: 0;
+}
+
+
+
+/* Contenitore destra */
 
 .container .part-right{
     width: 70%;
     height: 100%;
     background-color: blue;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Entrambi i contenitori: destra e sinistra */
+
+.part-left .top-left, .part-right .top-right {
+    height: 60px;
+    width: 100%;
+    padding: 0 10px;
+    background-color: rgb(237, 237, 237);
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
