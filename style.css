@@ -118,8 +118,9 @@ body{
     outline: 0;
 }
 
-.chat-container{
+.bottom-left{
     height: calc(100% - 175px);
+    overflow: auto;
 }
 
 .chat-preview{
@@ -142,6 +143,11 @@ body{
 
 .chat-info-text p{
     color: grey;
+}
+
+.chat-preview:hover{
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
 }
 
 

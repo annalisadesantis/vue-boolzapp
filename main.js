@@ -84,8 +84,41 @@ var app = new Vue({
                         status: 'received'
                     },
                 ]
+            },
+            {
+                name: 'Francesca',
+                avatar: 'https://boolzap.netlify.app/img/Francesca.svg',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Vini con me a correre al parco?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Ok ci vediamo li alle 17.00',
+                        status: 'received'
+                    },
+                ]
+            },
+            {
+                name: 'Roberto',
+                avatar: 'https://boolzap.netlify.app/img/Roberto.svg',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Giochiamo ai videogiochi?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'No, non posso devo studiare',
+                        status: 'received'
+                    },
+                ]
             }
-
         ]
     },
 
