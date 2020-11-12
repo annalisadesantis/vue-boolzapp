@@ -210,11 +210,15 @@ body{
 
 .bottom-right span.sent{
     background-color: white;
+    border: 2px solid white;
+    border-radius: 10px;
     float: left;
 }
 
 .bottom-right span.received{
     background-color: rgb(220, 248, 198);
+    border: 2px solid rgb(220, 248, 198);
+    border-radius: 10px;
     float: right;
 }
 

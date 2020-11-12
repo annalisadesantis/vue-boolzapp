@@ -1,6 +1,7 @@
 var app = new Vue({
     el: "#root",
     data: {
+        contactactive: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -122,9 +123,10 @@ var app = new Vue({
         ]
     },
     methods: {
-        // clickchat(index){
-        //     this.contacts = index;
-        // }
+        // Mi permette di aprire la chat dove clicco
+        clickchat(index){
+            this.contactactive = index;
+        }
     }
 
 });

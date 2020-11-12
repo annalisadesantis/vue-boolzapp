@@ -50,7 +50,7 @@
                     <!-- Bottom top left -->
                     <div class="bottom-left">
                         <div class="chat-container">
-                            <div class="chat-preview" v-for="(chat,indice) in contacts">
+                            <div class="chat-preview" v-for="(chat,indice) in contacts" @click="clickchat(indice)">
                                 <div class="chat-info">
                                     <img :src="chat.avatar" alt="avatar">
                                 </div>
@@ -66,9 +66,9 @@
                 <div class="part-right">
                     <div class="top-right">
                         <div class="chat-corrente">
-                            <img src="https://boolzap.netlify.app/img/Roberto.svg" alt="avatar-corrente">
+                            <img :src="contacts[contactactive].avatar" alt="avatar-corrente">
                             <div class="chat-corrente-text">
-                                <h4>Michele</h4>
+                                <h4>{{ contacts[contactactive].name }}</h4>
                                 <p>Ultimo accesso oggi alle 15:49</p>
                             </div>
                         </div>
