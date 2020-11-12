@@ -79,6 +79,10 @@ body{
     flex-direction: column;
 }
 
+.center-left-text span{
+    font-weight: bold;
+}
+
 .center-left-text a{
     color: rgb(100, 100, 100);
 }
@@ -156,9 +160,49 @@ body{
 .container .part-right{
     width: 70%;
     height: 100%;
-    background-color: blue;
     display: flex;
     flex-direction: column;
+}
+
+.chat-corrente{
+    width: 80%;
+    height: 100%;
+    background-color: red;
+}
+
+
+.bottom-right{
+    height: calc(100% - 120px);
+    background-image: url(https://boolzap.netlify.app/img/wallpaper.png);
+    background-size: contain;
+    background-repeat: repeat;
+    overflow-y: scroll;
+    padding: 30px;
+}
+
+.footer-right{
+    height: 60px;
+    background-color: rgb(237, 237, 237);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-right i{
+    color: grey;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.footer-right input{
+    border: 0;
+    width: 85%;
+    padding: 15px 10px;
+    border-radius: 20px;
+}
+
+.footer-right input:focus{
+    outline: 0;
 }
 
 
