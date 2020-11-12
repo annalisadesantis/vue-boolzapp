@@ -150,15 +150,17 @@ var app = new Vue({
 
             // console.log(this.contacts[this.contactactive]);
 
-            // Creo un oggetto per la risposta
-            var newmrisp = {
-                date: '10/01/2020 15:50:00',
-                message: 'ok',
-                status: 'received'
-            }
+            setTimeout(() => {
+                // Creo un oggetto per la risposta
+                var newmrisp = {
+                    date: '10/01/2020 15:50:00',
+                    message: 'ok',
+                    status: 'received'
+                }
 
-            // Stesso procedimento riga 145
-            this.contacts[this.contactactive].messages.push(newmrisp);
+                // Stesso procedimento riga 145
+                this.contacts[this.contactactive].messages.push(newmrisp);
+            },1000);
 
         }
 
