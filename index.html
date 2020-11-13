@@ -61,17 +61,21 @@
                                     <img :src="chat.avatar" :alt="chat.name">
                                 </div>
                                 <div class="chat-info-text">
-                                    <h4>
-                                        {{ chat.name }}
-                                    </h4>
-                                    <p>
-                                        Disponibile
-                                    </p>
+                                    <div>
+                                        <h4>
+                                            {{ chat.name }}
+                                        </h4>
+                                    </div>
+                                    <div>
+                                        <p class="message-preview">
+                                            {{ chat.messages[chat.messages.length - 1].message}}
+                                        </p>
+                                    </div>
                                 </div>
                                 <div class="chat-hours">
-                                    <p>
+                                    <span>
                                         {{getFormattedtime(chat)}}
-                                    </p>
+                                    </span>
                                 </div>
                             </div>
                         </div>

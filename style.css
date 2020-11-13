@@ -134,8 +134,12 @@ body{
     padding: 0 10px;
     border-bottom: 1px solid lightgrey;
     display: flex;
+}
+
+.chat-info{
+    display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .chat-info img{
@@ -146,21 +150,30 @@ body{
     margin-right: 20px;
 }
 
-.chat-info-text p{
+.chat-info-text{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.message-preview{
+    font-size: 12px;
     color: grey;
 }
 
-.chat-preview .chat-hours{
+.chat-hours{
     color: grey;
     font-size: 12px;
-    margin-left: 70px;
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
 }
 
 .chat-preview:hover{
     background-color: rgb(235, 235, 235);
     cursor: pointer;
 }
-
 
 /* Contenitore destra */
 

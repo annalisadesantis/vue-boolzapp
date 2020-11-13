@@ -189,14 +189,14 @@ var app = new Vue({
         orario() {
             return moment().format("HH:mm");
         },
-        // Funzione per prendere l'ora dell'ultimo messaggio
+        // Funzione per prendere l'ora dell'ultimo messaggio inviato
         getFormattedtime(chat) {
 
             var time = chat.messages[chat.messages.length - 1].date;
 
             console.log(time);
 
-            return moment(time, "HH:mm").format('HH:mm');
+            return moment(time,"HH:mm").format('HH:mm');
         }
 
 
