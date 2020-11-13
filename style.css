@@ -228,6 +228,11 @@ body{
     float: right;
 }
 
+.bottom-right p.time{
+    font-size: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
 
 .footer-right{
     height: 60px;

@@ -104,6 +104,7 @@
                         <div class="chat-message" v-for="info in contacts[contactactive].messages">
                             <span :class="info.status">
                                 {{ info.message }}
+                                <p class="time">{{ info.date }}</p>
                             </span>
                         </div>
                     </div>
