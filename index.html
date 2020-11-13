@@ -48,7 +48,7 @@
                     <div class="search-left">
                         <div class="input-left">
                             <i class="fas fa-search"></i>
-                            <input v-model="filterText" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+                            <input v-model="filterText" @keyup="filteredPeople" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
                     <!-- Bottom top left -->

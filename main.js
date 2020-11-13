@@ -177,7 +177,7 @@ var app = new Vue({
 
                 let searchText = this.filterText.toLowerCase();
 
-                var filtrocontatto = this.contacts.filter(nome => {
+                var filtrocontatto = this.contacts.name.filter(nome => {
 
                     return nome.name.toLowerCase().includes(searchText);
                 })
