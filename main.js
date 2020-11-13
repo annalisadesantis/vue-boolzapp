@@ -3,7 +3,7 @@ var app = new Vue({
     data: {
         contactactive: 0,
         nuovomessaggio: "",
-        filterText: null,
+        filterText: "",
         contacts: [
             {
                 name: 'Michele',
@@ -169,9 +169,9 @@ var app = new Vue({
     computed:{
         filteredPeople(){
 
-            if(this.filterText == null){
+            if(this.filterText == ""){
 
-                this.contacts.visible == true;
+                this.contacts.visible = true;
 
             }else{
 
@@ -182,10 +182,10 @@ var app = new Vue({
                     return nome.name.toLowerCase().includes(searchText);
                 })
 
-                filtrocontatto = this.contacts.visible == true;
+                filtrocontatto = this.contacts.visible = true;
 
                 if (filtrocontatto != this.contacts.name){
-                    this.contacts.visible == false;
+                    this.contacts.visible = false;
                 }
             }
 
