@@ -4,10 +4,6 @@ var app = new Vue({
         contactactive: 0,
         nuovomessaggio: "",
         filterText: "",
-        timestamp: "",
-        created() {
-            setInterval(this.getNow(), 1000);
-        },
         contacts: [
             {
                 name: 'Michele',
@@ -86,7 +82,7 @@ var app = new Vue({
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '10/01/2020 15:40:00',
                         message: 'Si, ma preferirei andare al cinema',
                         status: 'received'
                     },
@@ -103,7 +99,7 @@ var app = new Vue({
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '10/01/2020 15:35:00',
                         message: 'Ok ci vediamo li alle 17.00',
                         status: 'received'
                     },
@@ -115,12 +111,12 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '10/01/2020 17:30:55',
                         message: 'Giochiamo ai videogiochi?',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '10/01/2020 17:37:00',
                         message: 'No, non posso devo studiare',
                         status: 'received'
                     },
@@ -137,7 +133,7 @@ var app = new Vue({
 
             // Creo una un oggetto per inserire il nuovo messaggio
             var newmessage = {
-                date: '10/01/2020 15:50:00',
+                date: this.orario(),
                 message: '',
                 status: 'sent'
             }
@@ -158,7 +154,7 @@ var app = new Vue({
             setTimeout(() => {
                 // Creo un oggetto per la risposta
                 var newmrisp = {
-                    date: '10/01/2020 15:50:00',
+                    date: this.orario(),
                     message: 'ok',
                     status: 'received'
                 }
@@ -189,14 +185,19 @@ var app = new Vue({
             });
 
         },
-        getNow() {
-            const today = new Date();
-            const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            const dateTime = date +' '+ time;
-            this.timestamp = dateTime;
-        }
+        // Funzione per orario corrente che va al messaggio inviato
+        orario() {
+            return moment().format("HH:mm");
+        },
+        // Funzione per prendere l'ora dell'ultimo messaggio
+        getFormattedtime(chat) {
 
+            var date = chat.messages[chat.messages.length - 1].date;
+
+            console.log(date);
+
+            return moment(date, "DD/MM/YYYY HH:mm:ss").format('HH:mm');
+        }
     }
 
 });

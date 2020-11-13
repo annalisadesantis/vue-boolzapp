@@ -12,8 +12,10 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
         <!-- CSS -->
         <link rel="stylesheet" href="style.css">
+        <!-- MOMENT.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
         <!-- VUE -->
-         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </head>
     <body>
         <div id="root">
@@ -68,7 +70,7 @@
                                 </div>
                                 <div class="chat-hours">
                                     <p>
-                                        15:35
+                                        {{getFormattedtime(chat)}}
                                     </p>
                                 </div>
                             </div>
@@ -85,7 +87,7 @@
                                     {{ contacts[contactactive].name }}
                                 </h4>
                                 <p>
-                                    Ultimo accesso oggi alle <span> {{ timestamp }} </span>
+                                    Ultimo accesso oggi alle <span>{{orario()}}</span>
                                 </p>
                             </div>
                         </div>
