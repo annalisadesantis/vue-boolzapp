@@ -87,7 +87,10 @@
                                     {{ contacts[contactactive].name }}
                                 </h4>
                                 <p>
-                                    Ultimo accesso oggi alle <span>{{orario()}}</span>
+                                    Ultimo accesso oggi alle
+                                    <span>
+                                        {{  contacts[contactactive].messages[contacts[contactactive].messages.length - 1].date }}
+                                    </span>
                                 </p>
                             </div>
                         </div>
