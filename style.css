@@ -206,7 +206,7 @@ body{
     background-image: url(https://boolzap.netlify.app/img/wallpaper.png);
     background-size: contain;
     background-repeat: repeat;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 30px;
 }
 

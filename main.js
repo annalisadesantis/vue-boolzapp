@@ -8,7 +8,7 @@ var app = new Vue({
             {
                 name: 'Michele',
                 avatar: 'https://boolzap.netlify.app/img/Harry.svg',
-                visible: true,
+                visible: "true",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -30,7 +30,7 @@ var app = new Vue({
             {
                 name: 'Fabio',
                 avatar: 'https://boolzap.netlify.app/img/Luca.svg',
-                visible: true,
+                visible: "true",
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -52,7 +52,7 @@ var app = new Vue({
             {
                 name: 'Samuele',
                 avatar: 'https://boolzap.netlify.app/img/Marco.svg',
-                visible: true,
+                visible: "true",
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -74,7 +74,7 @@ var app = new Vue({
             {
                 name: 'Luisa',
                 avatar: 'https://boolzap.netlify.app/img/Martina.svg',
-                visible: true,
+                visible: "true",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -91,7 +91,7 @@ var app = new Vue({
             {
                 name: 'Francesca',
                 avatar: 'https://boolzap.netlify.app/img/Francesca.svg',
-                visible: true,
+                visible: "true",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -108,7 +108,7 @@ var app = new Vue({
             {
                 name: 'Roberto',
                 avatar: 'https://boolzap.netlify.app/img/Roberto.svg',
-                visible: true,
+                visible: "true",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -163,32 +163,32 @@ var app = new Vue({
                 this.contacts[this.contactactive].messages.push(newmrisp);
             },1000);
 
-        }
-
-    },
-    computed:{
+        },
         filteredPeople(){
 
-            if(this.filterText == ""){
+            var ricerca_utente = this.filterText;
 
-                this.contacts.visible = true;
+            console.log(ricerca_utente);
 
-            }else{
-
-                let searchText = this.filterText.toLowerCase();
-
-                var filtrocontatto = this.contacts.name.filter(nome => {
-
-                    return nome.name.toLowerCase().includes(searchText);
-                })
-
-                filtrocontatto = this.contacts.visible = true;
-
-                if (filtrocontatto != this.contacts.name){
-                    this.contacts.visible = false;
-                }
-            }
-
+            // if(this.filterText == ""){
+            //
+            //     this.contacts.visible = "true";
+            //
+            // }else{
+            //
+            //     let searchText = this.filterText.toLowerCase();
+            //
+            //     var filtrocontatto = this.contacts.name.filter(nome => {
+            //
+            //         return nome.name.toLowerCase().includes(searchText);
+            //     })
+            //
+            //     filtrocontatto = this.contacts.visible = "true";
+            //
+            //     if (filtrocontatto != this.contacts.name){
+            //         this.contacts.visible = "false";
+            //     }
+            // }
         }
 
     }
