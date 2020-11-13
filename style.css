@@ -128,14 +128,6 @@ body{
     overflow: auto;
 }
 
-.chat-preview .true{
-    display: block;
-}
-
-.chat-preview .false{
-    display: none;
-}
-
 .chat-preview{
     width: 100%;
     height: 81px;
@@ -156,6 +148,12 @@ body{
 
 .chat-info-text p{
     color: grey;
+}
+
+.chat-preview .chat-hours{
+    color: grey;
+    font-size: 12px;
+    margin-left: 70px;
 }
 
 .chat-preview:hover{

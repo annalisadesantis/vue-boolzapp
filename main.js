@@ -4,11 +4,15 @@ var app = new Vue({
         contactactive: 0,
         nuovomessaggio: "",
         filterText: "",
+        timestamp: "",
+        created() {
+            setInterval(this.getNow(), 1000);
+        },
         contacts: [
             {
                 name: 'Michele',
                 avatar: 'https://boolzap.netlify.app/img/Harry.svg',
-                visible: "true",
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -30,7 +34,7 @@ var app = new Vue({
             {
                 name: 'Fabio',
                 avatar: 'https://boolzap.netlify.app/img/Luca.svg',
-                visible: "true",
+                visible: true,
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -52,7 +56,7 @@ var app = new Vue({
             {
                 name: 'Samuele',
                 avatar: 'https://boolzap.netlify.app/img/Marco.svg',
-                visible: "true",
+                visible: true,
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -74,7 +78,7 @@ var app = new Vue({
             {
                 name: 'Luisa',
                 avatar: 'https://boolzap.netlify.app/img/Martina.svg',
-                visible: "true",
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -91,7 +95,7 @@ var app = new Vue({
             {
                 name: 'Francesca',
                 avatar: 'https://boolzap.netlify.app/img/Francesca.svg',
-                visible: "true",
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -108,7 +112,7 @@ var app = new Vue({
             {
                 name: 'Roberto',
                 avatar: 'https://boolzap.netlify.app/img/Roberto.svg',
-                visible: "true",
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -164,31 +168,33 @@ var app = new Vue({
             },1000);
 
         },
-        filteredPeople(){
+        filtrochat(){
 
-            var ricerca_utente = this.filterText;
+            // Creo una variabile per salvare il valore scritto nell'input
+            var ricerca_utente = this.filterText.toLowerCase();
 
             console.log(ricerca_utente);
 
-            // if(this.filterText == ""){
-            //
-            //     this.contacts.visible = "true";
-            //
-            // }else{
-            //
-            //     let searchText = this.filterText.toLowerCase();
-            //
-            //     var filtrocontatto = this.contacts.name.filter(nome => {
-            //
-            //         return nome.name.toLowerCase().includes(searchText);
-            //     })
-            //
-            //     filtrocontatto = this.contacts.visible = "true";
-            //
-            //     if (filtrocontatto != this.contacts.name){
-            //         this.contacts.visible = "false";
-            //     }
-            // }
+            // Scorro l'array contacts
+            this.contacts.forEach((item) => {
+
+                // Se il nome del contatto corrente (nimuscolo) è incluso nella varibiale dove c'è il valore dell'input
+                if (item.name.toLowerCase().includes(ricerca_utente)) {
+                    // stampo in pagina se è vero
+                    item.visible = true;
+                } else {
+                    // non stampo in pagina se è falso
+                    item.visible = false;
+                }
+            });
+
+        },
+        getNow() {
+            const today = new Date();
+            const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            const dateTime = date +' '+ time;
+            this.timestamp = dateTime;
         }
 
     }
