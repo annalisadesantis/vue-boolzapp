@@ -3,6 +3,7 @@ var app = new Vue({
     data: {
         contactactive: 0,
         nuovomessaggio: "",
+        filterText: null,
         contacts: [
             {
                 name: 'Michele',
@@ -161,6 +162,32 @@ var app = new Vue({
                 // Stesso procedimento riga 145
                 this.contacts[this.contactactive].messages.push(newmrisp);
             },1000);
+
+        }
+
+    },
+    computed:{
+        filteredPeople(){
+
+            if(this.filterText == null){
+
+                this.contacts.visible == true;
+
+            }else{
+
+                let searchText = this.filterText.toLowerCase();
+
+                var filtrocontatto = this.contacts.filter(nome => {
+
+                    return nome.name.toLowerCase().includes(searchText);
+                })
+
+                filtrocontatto = this.contacts.visible == true;
+
+                if (filtrocontatto != this.contacts.name){
+                    this.contacts.visible == false;
+                }
+            }
 
         }
 

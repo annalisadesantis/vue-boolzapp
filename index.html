@@ -48,15 +48,15 @@
                     <div class="search-left">
                         <div class="input-left">
                             <i class="fas fa-search"></i>
-                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+                            <input v-model="filterText" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
                     <!-- Bottom top left -->
                     <div class="bottom-left">
                         <div class="chat-container">
-                            <div class="chat-preview" v-for="(chat,indice) in contacts" @click="clickchat(indice)">
+                            <div class="chat-preview" :class="chat.visible" v-for="(chat,indice) in contacts" @click="clickchat(indice)" v-for="chat in filteredPeople">
                                 <div class="chat-info">
-                                    <img :src="chat.avatar" alt="avatar">
+                                    <img :src="chat.avatar" :alt="chat.name">
                                 </div>
                                 <div class="chat-info-text">
                                     <h4>
