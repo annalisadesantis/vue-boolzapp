@@ -16,6 +16,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
         <!-- VUE -->
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!-- SCROLLBAR -->
+        <script src="https://cdn.jsdelivr.net/npm/vue-chat-scroll/dist/vue-chat-scroll.min.js"></script>
     </head>
     <body>
         <div id="root">
@@ -106,14 +108,14 @@
                         </div>
                     </div>
                     <!-- Center right -->
-                    <div class="bottom-right">
+                    <div class="bottom-right" v-chat-scroll="{always: false, smooth: true, scrollonremoved: true}">
                         <div class="chat-message" v-for="(info, info_index) in contacts[contactactive].messages">
                             <span :class="info.status" class="messaggio">
                                 <i @click="show_menu(info_index)" class="fas fa-angle-down"></i>
                                 {{ info.message }}
                                 <p class="time">{{ info.date }}</p>
                                 <div class="dropdown-menu" :class="(contacts[contactactive].messages[info_index].cxl) ? 'visible' : 'notvisible'">
-                                    <i class="fas fa-trash-alt"></i>
+                                    <i @click="delete_this_message(info_index)" class="fas fa-trash-alt"></i>
                                     <span @click="delete_this_message(info_index)">
                                         Delete message
                                     </span>

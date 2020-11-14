@@ -153,7 +153,8 @@ var app = new Vue({
             var newmessage = {
                 date: this.orario(),
                 message: '',
-                status: 'sent'
+                status: 'sent',
+                cxl: false
             }
 
             // inserisco il valore dell'intup netro message della nuova varibile
@@ -174,7 +175,8 @@ var app = new Vue({
                 var newmrisp = {
                     date: this.orario(),
                     message: 'ok',
-                    status: 'received'
+                    status: 'received',
+                    cxl: false
                 }
 
                 // Stesso procedimento riga 145
@@ -231,7 +233,7 @@ var app = new Vue({
         },
         // Funzione per cancellare un messaggio
         delete_this_message(index){
-            // Uso la funzione splice per cancellare il messaggio selezionato dall'array 
+            // Uso la funzione splice per cancellare il messaggio selezionato dall'array
             this.contacts[this.contactactive].messages.splice(index, 1);
         }
     }
