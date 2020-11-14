@@ -174,7 +174,7 @@ var app = new Vue({
                 // Creo un oggetto per la risposta
                 var newmrisp = {
                     date: this.orario(),
-                    message: 'ok',
+                    message: 'Ok!',
                     status: 'received',
                     cxl: false
                 }
