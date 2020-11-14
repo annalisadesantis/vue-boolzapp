@@ -1,8 +1,11 @@
 var app = new Vue({
     el: "#root",
     data: {
+        // Indice contatto corrente
         contactactive: 0,
+        // Valore del messaggio scritto
         nuovomessaggio: "",
+        // Valore di ricerca utente
         filterText: "",
         contacts: [
             {
@@ -13,17 +16,20 @@ var app = new Vue({
                     {
                         date: '15:30',
                         message: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        status: 'sent',
+                        cxl: false
                     },
                     {
                         date: '15:50',
                         message: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
+                        status: 'sent',
+                        cxl: false
                     },
                     {
                         date: '16:15',
                         message: 'Tutto fatto!',
-                        status: 'received'
+                        status: 'received',
+                        cxl: false
                     }
                 ]
             },
@@ -35,17 +41,20 @@ var app = new Vue({
                     {
                         date: '16:30',
                         message: 'Ciao come stai?',
-                        status: 'sent'
+                        status: 'sent',
+                        cxl: false
                     },
                     {
                         date: '16:30',
                         message: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
+                        status: 'received',
+                        cxl: false
                     },
                     {
                         date: '16:35',
                         message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'received'
+                        status: 'received',
+                        cxl: false
                     }
                 ]
             },
@@ -57,17 +66,20 @@ var app = new Vue({
                     {
                         date: '10:10',
                         message: 'La Marianna va in campagna',
-                        status: 'received'
+                        status: 'received',
+                        cxl: false
                     },
                     {
                         date: '10:20',
                         message: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
+                        status: 'sent',
+                        cxl: false
                     },
                     {
                         date: '16:15',
                         message: 'Ah scusa!',
-                        status: 'received'
+                        status: 'received',
+                        cxl: false
                     }
                 ]
             },
@@ -79,12 +91,14 @@ var app = new Vue({
                     {
                         date: '15:30',
                         message: 'Lo sai che ha aperto una nuova pizzeria?',
-                        status: 'sent'
+                        status: 'sent',
+                        cxl: false
                     },
                     {
                         date: '15:40',
                         message: 'Si, ma preferirei andare al cinema',
-                        status: 'received'
+                        status: 'received',
+                        cxl: false
                     },
                 ]
             },
@@ -96,12 +110,14 @@ var app = new Vue({
                     {
                         date: '15:30',
                         message: 'Vieni con me a correre al parco?',
-                        status: 'sent'
+                        status: 'sent',
+                        cxl: false
                     },
                     {
                         date: '15:35',
                         message: 'Ok ci vediamo li alle 17.00',
-                        status: 'received'
+                        status: 'received',
+                        cxl: false
                     },
                 ]
             },
@@ -113,12 +129,14 @@ var app = new Vue({
                     {
                         date: '17:30',
                         message: 'Giochiamo ai videogiochi?',
-                        status: 'sent'
+                        status: 'sent',
+                        cxl: false
                     },
                     {
                         date: '17:37',
                         message: 'No, non posso devo studiare',
-                        status: 'received'
+                        status: 'received',
+                        cxl: false
                     },
                 ]
             }
@@ -197,9 +215,25 @@ var app = new Vue({
             console.log(time);
 
             return moment(time,"HH:mm").format('HH:mm');
+        },
+        // Funzione per mostrare il menu a tendina al click
+        show_menu(index){
+
+            // Se il valore cxl del messaggio corrente è false
+            if(this.contacts[this.contactactive].messages[index].cxl == false){
+                // Cambio il valoe di cxl a true x apparire in pagina la tendina
+                this.contacts[this.contactactive].messages[index].cxl = true;
+            }else{
+                // Cambio il valoe di cxl a false per far scomparire il menu al click
+                this.contacts[this.contactactive].messages[index].cxl = false;
+            }
+
+        },
+        // Funzione per cancellare un messaggio
+        delete_this_message(index){
+            // Uso la funzione splice per cancellare il messaggio selezionato dall'array 
+            this.contacts[this.contactactive].messages.splice(index, 1);
         }
-
-
     }
 
 });

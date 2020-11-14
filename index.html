@@ -19,9 +19,9 @@
     </head>
     <body>
         <div id="root">
-            <!-- Contenitore generale -->
+            <!-- General Container -->
             <div class="container">
-                <!-- Parte sinistra -->
+                <!-- Left Container -->
                 <div class="part-left">
                     <!-- Header top left -->
                     <div class="top-left">
@@ -81,8 +81,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- Parte Destra -->
+                <!-- Right Container -->
                 <div class="part-right">
+                    <!-- Header top right -->
                     <div class="top-right">
                         <div class="chat-corrente">
                             <img :src="contacts[contactactive].avatar" alt="avatar-corrente">
@@ -104,14 +105,23 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
+                    <!-- Center right -->
                     <div class="bottom-right">
-                        <div class="chat-message" v-for="info in contacts[contactactive].messages">
-                            <span :class="info.status">
+                        <div class="chat-message" v-for="(info, info_index) in contacts[contactactive].messages">
+                            <span :class="info.status" class="messaggio">
+                                <i @click="show_menu(info_index)" class="fas fa-angle-down"></i>
                                 {{ info.message }}
                                 <p class="time">{{ info.date }}</p>
+                                <div class="dropdown-menu" :class="(contacts[contactactive].messages[info_index].cxl) ? 'visible' : 'notvisible'">
+                                    <i class="fas fa-trash-alt"></i>
+                                    <span @click="delete_this_message(info_index)">
+                                        Delete message
+                                    </span>
+                                </div>
                             </span>
                         </div>
                     </div>
+                    <!-- Footer right -->
                     <div class="footer-right">
                         <i class="far fa-smile"></i>
                         <input v-model="nuovomessaggio" @keyup.enter="addmessage"  type="text" placeholder="Scrivi un messaggio">
