@@ -7,6 +7,7 @@ var app = new Vue({
         nuovomessaggio: "",
         // Valore di ricerca utente
         filterText: "",
+        // Array di contatti
         contacts: [
             {
                 name: 'Michele',
