@@ -183,6 +183,11 @@ body{
     cursor: pointer;
 }
 
+.chat-preview.active{
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
 
 /* Right Container */
 

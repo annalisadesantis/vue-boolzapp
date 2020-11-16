@@ -58,7 +58,7 @@
                     <!-- Bottom top left -->
                     <div class="bottom-left">
                         <div class="chat-container">
-                            <div class="chat-preview" v-if="chat.visible" v-for="(chat,indice) in contacts" @click="clickchat(indice)">
+                            <div class="chat-preview" :class="indice == contactactive ? 'active' : ''" v-if="chat.visible" v-for="(chat,indice) in contacts" @click="clickchat(indice)">
                                 <div class="chat-info">
                                     <img :src="chat.avatar" :alt="chat.name">
                                 </div>
