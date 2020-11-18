@@ -148,7 +148,7 @@ var app = new Vue({
         clickchat(index){
             this.contactactive = index;
         },
-        addmessage(newmessage){
+        addmessage(){
 
             // Creo una un oggetto per inserire il nuovo messaggio
             var newmessage = {
@@ -156,7 +156,7 @@ var app = new Vue({
                 message: '',
                 status: 'sent',
                 cxl: false
-            }
+            };
 
             // inserisco il valore dell'intup netro message della nuova varibile
             newmessage.message = this.nuovomessaggio;
@@ -169,8 +169,11 @@ var app = new Vue({
             // Ripulisco la stringa del input
             this.nuovomessaggio = "";
 
+            this.scrollbar();
+
             // console.log(this.contacts[this.contactactive]);
 
+            // é importante usare l'arrow function perchè posso usare il this che si riferisce a tutto il contesto a differenza della function normale dove il this non funzionerebbe
             setTimeout(() => {
                 // Creo un oggetto per la risposta
                 var newmrisp = {
@@ -182,6 +185,8 @@ var app = new Vue({
 
                 // Stesso procedimento riga 145
                 this.contacts[this.contactactive].messages.push(newmrisp);
+
+                this.scrollbar();
             },1000);
 
         },
@@ -236,7 +241,20 @@ var app = new Vue({
         delete_this_message(index){
             // Uso la funzione splice per cancellare il messaggio selezionato dall'array
             this.contacts[this.contactactive].messages.splice(index, 1);
+        },
+        // Funzione di scroll della pagina mex
+        scrollbar(){
+
+            Vue.nextTick(function(){
+                let chat = document.getElementsByClassName("bottom-right")[0];
+                chat.scrollTop = chat.scrollHeight;
+            });
         }
+
+    },
+    // Funzione che al caricamento pagina già mi da lo scroll verso il basso in automatico(mounted)
+    mounted(){
+        this.scrollbar();
     }
 
 });
